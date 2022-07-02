@@ -24,6 +24,7 @@ function displayBooks(){
         const bookPages = document.createElement('p');
         const done = document.createElement('div');
         const remove=document.createElement('button');
+        bookCard.setAttribute('id', i.toString());
         bookTitle.textContent=myLibrary[i].title;
         bookAuthor.textContent=myLibrary[i].author;
         bookPages.textContent=myLibrary[i].pages.toString();
@@ -40,11 +41,7 @@ function displayBooks(){
         bookCard.appendChild(remove);
         bookList.appendChild(bookCard);
         remove.addEventListener('click', () =>{
-            for(let i =0; i<myLibrary.length; i++){
-                if(myLibrary[i].title==bookTitle.textContent){
-                    myLibrary.splice(i,1)
-                }
-            }
+            myLibrary.splice(bookCard.id, 1);
             displayBooks();
         }
     )
