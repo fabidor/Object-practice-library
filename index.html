@@ -6,22 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="script.js"></script>
-    <link rel="stylesheet" href="styles.css">;
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <fieldset>
-        <form onsubmit="return false">
-            <label for="title">Title:</label>
-            <input type="text" id="title" name="title">
-            <label for="author">Author:</label>
-            <input type="text" id="author" name="author">
-            <label for="pages">Pages:</label>
-            <input type="number" id="pages" name="pages">
-            <label for="read">Read?:</label>
-            <input type="checkbox" id="read" name="read">
-            <button onClick="addBookToLibrary()">Do It.</button>
-        </form>
-    </fieldset>
+    <div class="addButton">
+        <button onClick="openForm()">Add Book</button>
+    </div>
+    <div id="formField">
+        <fieldset id="formBox">
+            <form onsubmit="return false">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title">
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author">
+                <label for="pages">Pages:</label>
+                <input type="number" id="pages" name="pages">
+                <label for="read">Read?:</label>
+                <input type="checkbox" id="read" name="read">
+                <button onClick="addBookToLibrary()">Do It.</button>
+            </form>
+        </fieldset>
+    </div>
 
     <div id="bookList"></div>
 </body>

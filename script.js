@@ -9,6 +9,8 @@ function Book(title, author, pages, read){
     this.read=read;
 }
 
+
+
 function displayBooks(){
     const bookList= document.getElementById('bookList');
     while(bookList.firstChild){
@@ -49,6 +51,12 @@ function displayBooks(){
 }
 }
 
+//function openForm(){
+    //const formField=document.getElementById('formField');
+    //const formBox=document.getElementById('formBox');
+    //formField.appendChild(formBox);
+//}
+
 function addBookToLibrary(){
     let title=document.getElementById('title').value;
     let author=document.getElementById('author').value;
@@ -60,6 +68,9 @@ function addBookToLibrary(){
     var form = document.querySelector('form');
     form.reset();
     displayBooks();
+    //const formField=document.getElementById('formField');
+    //const formBox=document.getElementById('formBox');
+    //formField.removeChild(formBox);
 }
 
 
