@@ -1,0 +1,9 @@
+#bookList{
+    display: grid;
+    grid-template-columns: repeat(5, 200px);
+}
+
+.bookCard{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
