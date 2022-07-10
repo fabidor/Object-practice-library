@@ -2,11 +2,13 @@ let myLibrary=[];
 
 
 
-function Book(title, author, pages, read){
-    this.title=title;
-    this.author=author;
-    this.pages=pages;
-    this.read=read;
+class Book{
+    constructor(title, author, pages, read){
+        this.title=title;
+        this.author=author;
+        this.pages=pages;
+        this.read=read;
+    }
 }
 
 
@@ -22,22 +24,20 @@ function displayBooks(){
         const bookTitle = document.createElement('p');
         const bookAuthor = document.createElement('p');
         const bookPages = document.createElement('p');
-        const done = document.createElement('div');
         const remove=document.createElement('button');
         bookCard.setAttribute('id', i.toString());
         bookTitle.textContent=myLibrary[i].title;
         bookAuthor.textContent=myLibrary[i].author;
         bookPages.textContent=myLibrary[i].pages.toString();
         if(myLibrary[i].read===true){
-            done.style.backgroundColor='green';
+            bookCard.style.backgroundColor='lightgreen';
         } else{
-            done.style.backgroundColor='red';
+            bookCard.style.backgroundColor='pink';
         }
         remove.textContent="Remove";
         bookCard.appendChild(bookTitle);
         bookCard.appendChild(bookAuthor);
         bookCard.appendChild(bookPages);
-        bookCard.appendChild(done);
         bookCard.appendChild(remove);
         bookList.appendChild(bookCard);
         remove.addEventListener('click', () =>{
@@ -59,7 +59,6 @@ function addBookToLibrary(){
     let author=document.getElementById('author').value;
     let pages=document.getElementById('pages').value;
     let read=document.getElementById('read').checked;
-    console.log(read);
     const newBook=new Book(title, author, pages, read);
     myLibrary.push(newBook);
     var form = document.querySelector('form');
